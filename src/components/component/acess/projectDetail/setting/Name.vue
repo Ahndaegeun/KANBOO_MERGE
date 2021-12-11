@@ -17,7 +17,8 @@ export default {
     justify-content : flex-start;
     padding : 15px;
     width: 60vw;
-    height : calc(100vh - 920px);
+    height : 8%;
+    position : relative;
     margin-top : 50px;
     margin-bottom : 50px;
     box-sizing: border-box;

@@ -99,12 +99,14 @@ export default {
     background-color : #2C2F3B;
     color : white;
     width: 60vw;
-    height : calc(100vh - 70px);
+    height : 40%;
+    position : relative;
     display : flex;
     justify-content : flex-start;
     flex-direction : column;
     font-size: 20px;
     overflow : hidden;
+    margin-top : 30px;
     margin-bottom : auto;
 }
 
@@ -124,12 +126,15 @@ export default {
 }
 
 .insert-btn-div{
+    text-align: center;
     border-radius: 5px;
     background-color : #FF8906;
     display : inline-block;
     margin-right : 10px;
     margin-top : 10px;
     color : white;
+    width : 40px;
+    height : 25px;
 }
 
 .member-ul-div{

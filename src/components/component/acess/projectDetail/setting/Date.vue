@@ -1,7 +1,7 @@
 <template>
 <div class="project-date-div" >
     <div class="modal-background" v-if="modalState == true" >    
-        <!-- <vue-cal
+        <vue-cal
             class="vuecal--date-picker"
             xsmall
             hide-view-selector
@@ -11,7 +11,7 @@
             active-view="month"
             :disable-views="['week', 'day']"
             style="width: 250px;height: 250px">
-        </vue-cal> -->
+        </vue-cal>
     </div>
 
     <div class="text-div">
@@ -31,9 +31,9 @@
 </template>
 
 <script>
-// import VueCal from 'vue-cal'
-// import 'vue-cal/dist/vuecal.css'
-// import moment from 'moment'
+import VueCal from 'vue-cal'
+import 'vue-cal/dist/vuecal.css'
+import moment from 'moment'
 
 export default {
     data() {
@@ -46,39 +46,43 @@ export default {
         }
     },
     components : {
-        // VueCal,
+        VueCal,
     },
     methods : {
-        // selectedDate(e){
-        //     if(this.clickStart == true){
-        //         this.inputStartDate = moment(e).format('YYYY/MM/DD')
-        //         this.$store.state.setting.projectDate.startDate = moment(e).format('YYYY/MM/DD')
-        //         if(this.checkDate(this.inputStartDate, this.$store.state.setting.projectDate.endDate) == false){
-        //             this.inputStartDate = ""
-        //         }
-        //     }else if(this.clickEnd == true){
-        //         this.inputEndDate = moment(e).format('YYYY/MM/DD')
-        //         this.$store.state.setting.projectDate.endDate = moment(e).format('YYYY/MM/DD')
-        //         if(this.checkDate(this.$store.state.setting.projectDate.startDate, this.inputEndDate) == false){
-        //             this.inputEndDate = ""
-        //         }
-        //     }
+        selectedDate(e){
+            if(this.clickStart == true){
+                this.inputStartDate = moment(e).format('YYYY/MM/DD')
+                this.$store.state.setting.projectDate.startDate = moment(e).format('YYYY/MM/DD')
+                if(this.checkDate(this.inputStartDate, this.$store.state.setting.projectDate.endDate) == false){
+                    this.inputStartDate = ""
+                }
+            }else if(this.clickEnd == true){
+                this.inputEndDate = moment(e).format('YYYY/MM/DD')
+                this.$store.state.setting.projectDate.endDate = moment(e).format('YYYY/MM/DD')
+                if(this.checkDate(this.$store.state.setting.projectDate.startDate, this.inputEndDate) == false){
+                    this.inputEndDate = ""
+                }
+            }
 
-        //     this.modalState = false;
-        //     this.clickStart = false;
-        //     this.clickEnd = false;
-        //     this.checkDate(this.inputStartDate, this.inputEndDate)       
-        // },
+            this.modalState = false;
+            this.clickStart = false;
+            this.clickEnd = false;
+            this.checkDate(this.inputStartDate, this.inputEndDate)       
+        },
         clickStartDateFunction(){
+            
             if(this.modalState == false) {
-              this.modalState = true; this.clickStart = true;
+                this.modalState = true; this.clickStart = true;
             } else {
-              this.modalState = false;
+                this.modalState = false;
             }
         },
         clickEndDateFunction(){
-            if(this.modalState == false){ this.modalState = true; this.clickEnd = true;}
-            else this.modalState = false
+            if(this.modalState == false) {
+                this.modalState = true; this.clickEnd = true;
+            } else {
+                this.modalState = false;
+            }
         },
         loadStoreDate(){
             this.inputStartDate = this.$store.state.setting.projectDate.startDate;
@@ -103,15 +107,15 @@ export default {
 
 <style scoped>
 .project-date-div{
-    position :relative;
+    position : relative;
     border-radius : 5px;
     padding : 15px;
     display :flex;
     justify-content : space-around;
     flex-direction : column;
     width: 60vw;
-    height : calc(100vh - 860px);
-    box-sizing: border-box;
+    height : 15%;
+    /* box-sizing: border-box; */
     background-color : #2C2F3B;
     color : white;
     margin-bottom : 50px;
