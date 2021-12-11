@@ -133,14 +133,15 @@ export default {
 .main-div{
     border-radius : 5px;
     padding : 15px;
+    position : relative;
     background-color : #2C2F3B;
     display : flex;
     justify-content : space-around;
     align-items : flex-start;
     color : white;
     width : 60vw;
-    margin-bottom : 50px; 
-    height : calc(100vh - 700px);
+    /* margin-bottom : 50px;  */
+    height : auto;
 }
 .main-left-div{
     margin-left: 20px;

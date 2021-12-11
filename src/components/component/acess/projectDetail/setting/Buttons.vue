@@ -74,7 +74,7 @@ div{
   align-items : stretch;
   flex-direction: row;
   width : 60vw;
-  height : 100px;
+  /* height : 100px; */
 }
 
 .modify-btn{
